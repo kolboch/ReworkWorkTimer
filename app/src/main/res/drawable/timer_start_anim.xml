@@ -1,0 +1,126 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="256dp"
+            android:height="256dp"
+            android:viewportWidth="256"
+            android:viewportHeight="256">
+            <path
+                android:name="bordergray"
+                android:pathData="M 128 10 C 96.319 10 65.903 22.441 43.501 44.561 C 21.099 66.682 8.5 96.716 8.5 128 C 8.5 159.284 21.099 189.318 43.501 211.439 C 65.903 233.559 96.319 246 128 246 C 159.681 246 190.097 233.559 212.499 211.439 C 234.901 189.318 247.5 159.284 247.5 128 C 247.5 96.716 234.901 66.682 212.499 44.561 C 190.097 22.441 159.681 10 128 10 Z"
+                android:strokeColor="#b3b3b3"
+                android:strokeWidth="5"
+                android:strokeMiterLimit="10"/>
+            <path
+                android:name="circle"
+                android:pathData="M 128 10 C 96.319 10 65.903 22.441 43.501 44.561 C 21.099 66.682 8.5 96.716 8.5 128 C 8.5 159.284 21.099 189.318 43.501 211.439 C 65.903 233.559 96.319 246 128 246 C 159.681 246 190.097 233.559 212.499 211.439 C 234.901 189.318 247.5 159.284 247.5 128 C 247.5 96.716 234.901 66.682 212.499 44.561 C 190.097 22.441 159.681 10 128 10"
+                android:strokeColor="#22b573"
+                android:strokeWidth="5"
+                android:strokeLineJoin="round"
+                android:strokeMiterLimit="10"/>
+            <group
+                android:name="group"
+                android:pivotX="128"
+                android:pivotY="128"
+                android:rotation="360">
+                <path
+                    android:name="tick"
+                    android:pathData="M 128 128 L 128 68"
+                    android:strokeColor="#22b573"
+                    android:strokeWidth="5"
+                    android:strokeLineCap="round"
+                    android:strokeMiterLimit="10"/>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="circle">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="trimPathEnd"
+                    android:duration="1000"
+                    android:valueFrom="0"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="pathData"
+                    android:duration="1000"
+                    android:valueFrom="M 128 10 C 159.681 10 190.097 22.441 212.499 44.561 C 234.901 66.682 247.5 96.716 247.5 128 C 247.5 159.284 234.901 189.318 212.499 211.439 C 190.097 233.559 159.681 246 128 246 C 96.319 246 65.903 233.559 43.501 211.439 C 21.099 189.318 8.5 159.284 8.5 128 C 8.5 96.716 21.099 66.682 43.501 44.561 C 65.903 22.441 96.319 10 128 10"
+                    android:valueTo="M 128 10 C 96.319 10 65.903 22.441 43.501 44.561 C 21.099 66.682 8.5 96.716 8.5 128 C 8.5 159.284 21.099 189.318 43.501 211.439 C 65.903 233.559 96.319 246 128 246 C 159.681 246 190.097 233.559 212.499 211.439 C 234.901 189.318 247.5 159.284 247.5 128 C 247.5 96.716 234.901 66.682 212.499 44.561 C 190.097 22.441 159.681 10 128 10"
+                    android:valueType="pathType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="strokeColor"
+                    android:duration="1000"
+                    android:valueFrom="#cccccc"
+                    android:valueTo="#22b573"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="rotation"
+                    android:duration="100"
+                    android:valueFrom="0"
+                    android:valueTo="0"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="rotation"
+                    android:duration="1000"
+                    android:valueFrom="0"
+                    android:valueTo="360"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="tick">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="pathData"
+                    android:duration="1000"
+                    android:valueFrom="M 128 68 L 128 128"
+                    android:valueTo="M 128 128 L 128 68"
+                    android:valueType="pathType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="strokeColor"
+                    android:duration="1000"
+                    android:valueFrom="#cccccc"
+                    android:valueTo="#22b573"
+                    android:valueType="colorType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="bordergray">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="pathData"
+                    android:duration="1000"
+                    android:valueFrom="M 128 10 C 96.319 10 65.903 22.441 43.501 44.561 C 21.099 66.682 8.5 96.716 8.5 128 C 8.5 159.284 21.099 189.318 43.501 211.439 C 65.903 233.559 96.319 246 128 246 C 159.681 246 190.097 233.559 212.499 211.439 C 234.901 189.318 247.5 159.284 247.5 128 C 247.5 96.716 234.901 66.682 212.499 44.561 C 190.097 22.441 159.681 10 128 10 L 128 10"
+                    android:valueTo="M 128 10 C 159.681 10 190.097 22.441 212.499 44.561 C 234.901 66.682 247.5 96.716 247.5 128 C 247.5 159.284 234.901 189.318 212.499 211.439 C 190.097 233.559 159.681 246 128 246 C 96.319 246 65.903 233.559 43.501 211.439 C 21.099 189.318 8.5 159.284 8.5 128 C 8.5 96.716 21.099 66.682 43.501 44.561 C 65.903 22.441 96.319 10 128 10 L 128 10"
+                    android:valueType="pathType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="trimPathStart"
+                    android:duration="1000"
+                    android:valueFrom="0"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WorkTimer</string>
+    <string name="startStopImage">Start/stop image button</string>
 </resources>
