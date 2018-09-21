@@ -8,52 +8,19 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 const val TABLE_MEASUREMENTS = "worktimer_measures"
+const val MEASUREMENTS_DATE = "wt_date"
+const val MEASUREMENTS_TIME = "wt_time"
 
 @Entity(tableName = TABLE_MEASUREMENTS)
 data class Measurement(
-        @ColumnInfo(name = "wt_date")
+        @PrimaryKey
+        @ColumnInfo(name = MEASUREMENTS_DATE)
         var measurementDate: String,
-        @ColumnInfo(name = "wt_time")
+        @ColumnInfo(name = MEASUREMENTS_TIME)
         var measuredTime: Int
-) {
-    @PrimaryKey(autoGenerate = true)
-    var id: Long? = null
-}
+)
 
 data class Time(val hours: Int, val minutes: Int, val seconds: Int)
-
-class Timer {
-    var measuredTime: Long = 0
-    private var startTime: Long = 0
-    private var isOn = false
-
-    fun getTimeMeasured(): Time {
-        val secondsTotal = (System.currentTimeMillis() - startTime + measuredTime).millisToSeconds()
-        val minutesTotal = secondsTotal.secondsToMinutes()
-        val hours = minutesTotal.minutesToHours()
-        val minutes = minutesTotal - hours.hoursToMinutes()
-        val seconds = secondsTotal - minutesTotal.minutesToSeconds()
-        return Time(hours.toInt(), minutes.toInt(), seconds.toInt())
-    }
-
-    fun startTimer() {
-        if (isOn) {
-            return
-        } else {
-            startTime = System.currentTimeMillis()
-            isOn = true
-        }
-    }
-
-    fun stopTimer() {
-        if (!isOn) {
-            return
-        } else {
-            measuredTime += (System.currentTimeMillis() - startTime)
-            isOn = false
-        }
-    }
-}
 
 @SuppressLint("SimpleDateFormat")
 fun getCurrentSimpleDate(): String {
