@@ -20,10 +20,15 @@ data class Measurement(
         var measuredTime: Int
 )
 
-data class Time(val hours: Int, val minutes: Int, val seconds: Int)
+data class Time(val hours: Int, val minutes: Int, val seconds: Int) {
+    fun getFormattedTime(): String {
+        return String.format("%d:%02d:%02d", hours, minutes, seconds)
+    }
+}
 
 @SuppressLint("SimpleDateFormat")
 fun getCurrentSimpleDate(): String {
     val sdf = SimpleDateFormat("dd-MM-yyyy")
     return sdf.format(Date())
 }
+

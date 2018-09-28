@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         tools:context=".activities.main.MainActivity">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/timeButton"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -23,7 +23,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:contentDescription="@string/startStopImage"
-            android:src="@drawable/timer_stop_anim"
+            android:src="@{viewModel.timerImageSrc}"
+            android:onClick="@{() -> viewModel.onTimerClicked()}"
             app:layout_constraintDimensionRatio="W,1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -18,7 +18,7 @@ interface DaoMeasurements {
     fun selectAllMeasurements(): LiveData<List<Measurement>>
 
     @Query("SELECT * FROM $TABLE_MEASUREMENTS WHERE $MEASUREMENTS_DATE= :measurementDate")
-    fun selectMeasurementsForDate(measurementDate: String): Measurement?
+    fun selectMeasurementForDate(measurementDate: String): Measurement?
 
     /**
      * update measurement based on primary key

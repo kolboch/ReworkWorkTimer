@@ -32,4 +32,6 @@ class TimerWt {
             isOn = false
         }
     }
+
+    fun isRunning(): Boolean = isOn
 }

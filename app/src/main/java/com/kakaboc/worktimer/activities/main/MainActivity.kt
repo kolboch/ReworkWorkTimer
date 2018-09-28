@@ -20,18 +20,11 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel
-        observeViewModel()
 //        timeButton.setOnClickListener {
 //            val toAnimate = timeButton.drawable
 //            if (toAnimate is Animatable) {
 //                toAnimate.start()
 //            }
 //        }
-    }
-
-    private fun observeViewModel() {
-        viewModel.getTimer().observe(this, Observer<TimerWt> {
-
-        })
     }
 }
