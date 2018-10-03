@@ -1,6 +1,8 @@
 package com.kakaboc.worktimer.activities.main
 
 import android.content.SharedPreferences
+import android.databinding.BindingAdapter
+import android.view.View
 import com.kakaboc.worktimer.R
 import com.kakaboc.worktimer.data.DaoMeasurements
 import com.kakaboc.worktimer.data.SP_TIMER_STARTED
@@ -21,6 +23,10 @@ interface MainMVVM {
     interface ViewModel {
         fun postMeasuredTime(formattedTime: String)
         fun postTimerImageSrc(imageSrc: Int)
+    }
+
+    interface View {
+        fun onTimerClicked(view: android.view.View)
     }
 }
 
@@ -79,5 +85,4 @@ class MainPresenter(
             }
         }
     }
-
 }

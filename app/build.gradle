@@ -20,6 +20,9 @@ android {
                 arg("room.schemaLocation", "$projectDir/schemas/room/")
             }
         }
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
     buildTypes {
         release {
