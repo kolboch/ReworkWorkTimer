@@ -4,6 +4,8 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
 import android.content.Context
+import android.graphics.drawable.Drawable
+import android.support.v4.content.ContextCompat
 import com.kakaboc.worktimer.R
 import com.kakaboc.worktimer.data.AppDatabase
 import com.kakaboc.worktimer.data.SHARED_PREFERENCES_WT
@@ -15,9 +17,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application), M
 
     private val LOG = "MainViewModel"
 
-    val measuredTime: MutableLiveData<String> = MutableLiveData<String>().apply { value = "0:00:00" }
-    val timerImageSrc: MutableLiveData<Int> = MutableLiveData<Int>().apply { value = R.drawable.timer_start_anim }
 
+    val measuredTime: MutableLiveData<String> = MutableLiveData<String>().apply { value = "0:00:00" }
+    val timerIsOn: MutableLiveData<Boolean> = MutableLiveData<Boolean>().apply { value = false }
     private lateinit var presenter: MainMVVM.Presenter
 
     init {
@@ -35,8 +37,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application), M
         measuredTime.postValue(formattedTime)
     }
 
-    override fun postTimerImageSrc(imageSrc: Int) {
-        timerImageSrc.postValue(imageSrc)
+    override fun postTimerIsOnValue(isTimerOn: Boolean) {
+        timerIsOn.value = isTimerOn
     }
 
     fun onTimerClicked() {

@@ -22,11 +22,11 @@ interface MainMVVM {
 
     interface ViewModel {
         fun postMeasuredTime(formattedTime: String)
-        fun postTimerImageSrc(imageSrc: Int)
+        fun postTimerIsOnValue(isTimerOn: Boolean)
     }
 
     interface View {
-        fun onTimerClicked(view: android.view.View)
+//        fun onTimerClicked(view: android.view.View)
     }
 }
 
@@ -64,13 +64,13 @@ class MainPresenter(
     private fun stopTimer() {
         timer.stopTimer()
         stopUpdateCoroutine()
-        viewModel.postTimerImageSrc(R.drawable.timer_start_anim)
+        viewModel.postTimerIsOnValue(false)
     }
 
     private fun startTimer() {
         timer.startTimer()
         startUpdateCoroutine()
-        viewModel.postTimerImageSrc(R.drawable.timer_stop_anim)
+        viewModel.postTimerIsOnValue(true)
     }
 
     private fun stopUpdateCoroutine() {
